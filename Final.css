@@ -1,0 +1,46 @@
+body {
+  background: orange;
+}
+
+#title{
+    animation:blinkingText 2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000; }
+    20%{    color: red; }
+    40%{    color: blue; }
+    60%{    color: green; }
+    80%{    color: yellow; }
+    100%{   color: #000; }
+}
+
+#title {
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#table {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#button {
+  background-color: black;
+  font-size: 20px;
+  color: yellow;
+}
+
+#Button li:hover {
+  background-color: blue;
+}
+
+#button2 {
+  background-color: black;
+  font-size: 20px;
+  color: yellow;
+}
+
+#Button2 li:hover {
+  background-color: blue;
+}

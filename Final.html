@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <title>Guess The Picture</title>
+    <script>
+      var questionCount = 0;
+      var score = 0;
+      var answer1 = "";
+      var answer2 = "";
+      var answer3 = "";
+      var answer4 = "";
+      var answer5 = "";
+      function gradeQuiz()
+      {
+        if(questionCount == 0)
+        {
+          answer1 = document.getElementById("answer").value;
+          if(answer1 == "dog")
+          {
+            score = score + 1;
+          }
+          document.getElementById("picture").innerHTML = "<img src='car.jpg'>";
+        }
+        if(questionCount == 1)
+        {
+           answer2 = document.getElementById("answer").value;
+          if(answer2 == "car")
+          {
+            score = score + 1;
+          }
+          document.getElementById("picture").innerHTML = "<img src='nebraska.jpg'>";
+        }
+        if(questionCount == 2)
+        {
+         answer3 = document.getElementById("answer").value;
+          if(answer3 == "Nebraska")
+          {
+            score = score + 1;
+          }
+          document.getElementById("picture").innerHTML = "<img src='bear.jpg'>";
+        }
+        if(questionCount == 3)
+        {
+           answer4 = document.getElementById("answer").value;
+          if(answer4 == "bear")
+          {
+            score = score + 1;
+          }
+          document.getElementById("picture").innerHTML = "<img src='frog.jpg'>";
+        }
+        if(questionCount == 4)
+        {
+          answer5 = document.getElementById("answer").value;
+          if(answer5 == "frog")
+          {
+            score = score + 1;
+          }
+          end();
+        }
+        questionCount = questionCount + 1;
+      }
+      function end()
+      {
+        var table = "Results" + "<br>";
+        table = table + "The first picture was a dog; your answer was: " + answer1 + "<br>";
+        table = table + "The second picture was a car; your answer was: " + answer2 + "<br>";
+        table = table + "The third picture showed Nebraska; your answer was: " + answer3 + "<br>";
+        table = table + "The fourth picture was a bear; your answer was: " + answer4 + "<br>";
+        table = table + "The fifth picture was a frog; your answer was: " + answer5 + "<br>";
+        document.getElementById("picture").style.visibility = "hidden";
+        document.getElementById("button").style.visibility = "hidden";
+        document.getElementById("answer").style.visibility = "hidden";
+        document.getElementById("table").innerHTML = "<br>" + "Score: " + score + "/5" + "<br>" + table;
+        document.getElementById("button2").style.visibility = "visible";
+      }
+      function playAgain()
+      {
+        document.getElementById("picture").style.visibility = "visible";
+        document.getElementById("answer").style.visibility = "visible";
+        document.getElementById("button").style.visibility = "visible";
+        document.getElementById("button2").style.visibility = "hidden";
+        document.getElementById("table").style.visibility = "hidden";
+        questionCount = 0;
+        table = "";
+      }
+      function hide()
+      {
+        document.getElementById("button2").style.visibility = "hidden";
+      }
+    </script>
+    <link rel="stylesheet" href="Final.css">
+  </head>
+
+  <body onload="hide()">
+    <center>
+    <h1 id="title">Guess The Picture</h1>
+    <span id="picture"><img src="dog.jpg"></span>
+    <span id="table"></span>
+    <br><br>
+    <input type="text" id="answer">
+    <input type="button" value="Enter" onclick="gradeQuiz()" id="button">
+    <br>
+    <input type="button" value="Play Again" onclick="playAgain()" id="button2">
+    </center>
+  </body>
+</html>
